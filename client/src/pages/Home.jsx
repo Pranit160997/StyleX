@@ -52,11 +52,14 @@ export default function Home() {
   
 
   return (
-    <div className='fade-in'>
+    <div className='fade-in flex flex-col items-center'>
       {/* top */}
+
+      {/* logo */}
       <div style={{paddingTop: '15px', paddingBottom:'15px'}}>
         <img src={logo} style={{ height: '50px', width: '150px'  }}/>
       </div>
+
       <div className='shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg sm:w-[1520px] h-[280px]' style={{ backgroundColor: '#c7c5bf' }}>
       <div className='flex flex-col gap-6 p-3 px-3 max-w-2xl mx-auto'>
           <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
