@@ -102,7 +102,7 @@ export default function Home() {
 
       {/* listing results for offer, sale and rent */}
 
-      <div className='max-w-7.5xl mx-auto flex flex-col gap-8 my-10'  style={{ paddingLeft: '4rem' }}>
+      <div className='max-w-7.5xl mx-auto flex flex-col items-center gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
