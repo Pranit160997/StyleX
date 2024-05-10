@@ -6,8 +6,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: process.env.NODE_ENV === 'production' ? 'https://stylex.onrender.com/' : 'http://localhost:5000',
         secure: false,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
