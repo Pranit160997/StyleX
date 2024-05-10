@@ -24,6 +24,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+app.use(cors());
 
 app.listen(process.env.PORT || 5000, () => {
   console.log('Server is running!');
