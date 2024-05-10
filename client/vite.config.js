@@ -9,7 +9,6 @@ export default defineConfig({
         target: process.env.NODE_ENV === 'production' ? 'https://stylex.onrender.com/' : 'http://localhost:5000',
         secure: false,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
