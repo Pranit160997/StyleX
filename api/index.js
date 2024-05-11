@@ -26,7 +26,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(cors({
-  origin: ['https://style-x.vercel.app', 'https://localhost:5173'], // Replace with your frontend domain
+  origin: ['https://style-x.vercel.app', 'http://localhost:5173'], // Replace with your frontend domain
   methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
   credentials: true, // Allow cookies
 }));
