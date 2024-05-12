@@ -6,7 +6,7 @@ import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
 import logo from './logo.svg'
-
+import BaseUrl from './BaseUrl';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?offer=true&limit=4');
+        const res = await fetch(`${BaseUrl}/api/listing/get?offer=true&limit=4`);
         const data = await res.json();
         setOfferListings(data);
         fetchRentListings();
@@ -27,7 +27,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=rent&limit=4');
+        const res = await fetch(`${BaseUrl}/api/listing/get?type=rent&limit=4`);
         const data = await res.json();
         
         setRentListings(data);
@@ -39,7 +39,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
+        const res = await fetch(`${BaseUrl}/api/listing/get?type=sale&limit=4`);
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
@@ -50,7 +50,11 @@ export default function Home() {
   }, []);
   console.log(rentListings)
   
-
+ /*  fetch('https://stylex.onrender.com/api/listing/get')
+  .then(response => response.json()) // Parse the response as JSON
+  .then(data => console.log(data)) // Log the response data
+  .catch(error => console.error(error));  */
+  
   return (
     <div className='fade-in flex flex-col items-center'>
       {/* top */}

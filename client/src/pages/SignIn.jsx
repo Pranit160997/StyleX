@@ -7,6 +7,7 @@ import {
   signInFailure,
 } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
+import BaseUrl from './BaseUrl';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -23,7 +24,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch(`${BaseUrl}/api/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,3 +80,15 @@ export default function SignIn() {
     </div>
   );
 }
+
+///
+/* fetch('/api/auth/signin',{
+  method:'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    email:'test4@gmail.com',
+    pasword: '12345678'
+  })
+}) */
