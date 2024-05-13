@@ -174,11 +174,14 @@ export default function Profile() {
           accept='image/*'
         />
         <img
-          onClick={() => fileRef.current.click()}
           src={formData.avatar || currentUser.avatar}
           alt='profile'
-          className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2'
+          className='rounded-full h-24 w-24 object-cover self-center mt-2'
         />
+        <div className='bg-green-700 text-white p-2 rounded-lg uppercase text-center hover:opacity-95 cursor-pointer'
+          onClick={() => fileRef.current.click()}>
+          upload profile picture
+        </div>
         <p className='text-sm self-center'>
           {fileUploadError ? (
             <span className='text-red-700'>
